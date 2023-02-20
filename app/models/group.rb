@@ -5,4 +5,9 @@ class Group < ApplicationRecord
   has_many :group_expenses, dependent: :destroy
   has_many :expenses, through: :group_expenses, dependent: :destroy
 
+  validates :name, presence: true, length: { minimum: 1, maximum: 20 },
+  uniqueness: { scope: :author, message: 'You already have a category with this name' }
+
+  validates :icon, presence: true
+
 end
