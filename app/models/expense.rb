@@ -4,5 +4,5 @@ class Expense < ApplicationRecord
   has_many :groups, through: :group_budgets, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 1, maximum: 20 }, uniqueness: { scope: :author, message: 'You already have a transaction with this name' }
-  validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :amount, presence: true, numericality: { greater_that_or_equal_to: 0 }
 end

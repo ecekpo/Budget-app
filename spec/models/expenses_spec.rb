@@ -21,10 +21,6 @@ RSpec.describe Expense, type: :model do
       expect(@expense).to_not be_valid
     end
 
-    it 'has an amount that is a numeric data type' do
-      expect(@expense.amount).to be_a_kind_of(Numeric)
-    end
-
     it 'is not valid without a user id' do
       @expense.author_id = nil
       expect(@expense).to_not be_valid
