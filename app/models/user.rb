@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  has_many :groups, foreign_key: :author_id, dependent: :destroy
-  has_many :expenses, foreign_key: :author_id, dependent: :destroy
-
-  validates :name, presence: true, length: { minumum: 1, maximum: 20 }
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :confirmable, :registerable,
+         :recoverable, :rememberable, :validatable
+  
 end
