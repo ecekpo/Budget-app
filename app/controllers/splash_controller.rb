@@ -3,5 +3,4 @@ class SplashController < ApplicationController
     render :index
   end
 
-  def new; end
 end

@@ -1,46 +1,7 @@
-<div class= "container-fluid singup">
-    <div class= "row">
-        <p class="col-3 signinAs"><%= link_to "<-", groups_path, class:'link-whiteArrow'%></p>
-        <h5 class="py-3 col-5 text-center title">Transaction</h5>
-        <% if user_signed_in? %>
-            <div class='col-4 py-3'>
-                <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn btn-outline-light' %>
-            </div>
-        <% end %>
-    </div>
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">New Transaction</h1>
+
+  <%= render "shared/form", expense: @expense %>
+  
+  <%= link_to 'Back to expenses', group_expenses_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
-<br>
-
-
-<%= form_with model: @expense, url: group_expenses_path, method: :post, scope: :expense do |f| %>
-    <% if f.object.errors.any?%>
-        <div class='alert alert-danger'>
-            <%f.object.errors.full_messages.each do |msg|%>
-            <p><%=msg%></p>
-        </div>
-        <%end%>
-    <%end%>
-    <div class="container newCategorie py-2">
-        <h2 class="titleCategorie text-center">Create New Transaction</h2>
-    <div class= 'row'>
-    <div class="col-2"></div>
-    <div class="col-8">
-    <div>
-        <%= f.text_field :name, placeholder: 'Name', class: 'input-field form-control' %>
-    </div>
-    <br>
-    <div class='field'>
-        <%= f.label :group, "Select Catagory"  %>
-        <%= f.collection_select :group, @groups, :group_id, :name, required: true, prompt: true,class: 'form-select', aria_label: "Disabled select example"  %>
-    </div> 
-    <br>
-    <div>
-        <%= f.text_field :amount, placeholder: 'Amount', class: 'input-field form-control' %>
-    </div>
-    <br>
-    <div>
-        <%= f.submit "Add Transaction", data: {turbo: false}, class: 'btn btn-primary' %>
-    </div>
-    </div>
-    <div class="col-2"></div>
-<% end %>

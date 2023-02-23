@@ -3,8 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :groups, foreign_key: 'user_id', class_name: 'Group'
-  has_many :expenses, foreign_key: 'user_id', class_name: 'Expense'
+  validates :name, presence: true, length: { in: 1..15 }
+  validates :email, presence: true, length: { in: 1..50 }, uniqueness: true
+  validates :password, presence: true, length: { in: 6..20 }
 
-  validates :name, presence: true, length: { maximum: 25 }
+  has_many :groups, foreign_key: :author_id, dependent: :destroy
+  has_many :expenses, foreign_key: :author_id, dependent: :destroy
 end

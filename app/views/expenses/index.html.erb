@@ -23,11 +23,9 @@
     </div>
   <% end %>
   <br>
-  <div class='row'>
-    <div class= "col-3"></div>
-    <div class= "col-9">
-      <%= link_to 'Add New Transaction', new_expense_path(params[:group_id]), class: 'btn btn-primary' %>
-    </div>
-    <div class= "col-2"></div>
-  </div>
+</div>
+<div class="bg-secondary fixed-bottom d-flex justify-content-center py-3">
+  <%= link_to new_group_expense_path, class: "w-75 d-flex align-items-center justify-content-center gap-2 py-2 px-5 bg-secondary border text-white block font-medium" do %>
+    <span>New transaction</span>
+  <% end %>
 </div>

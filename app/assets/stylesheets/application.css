@@ -88,3 +88,9 @@ input#transaction_amount::placeholder {
     height: 100px;
   }
 }
+
+.button-category {
+  background-color: #60B524;
+  text-decoration: none;
+  color: #fff;
+}
