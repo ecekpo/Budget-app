@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#index'
-  
-  resources :users do
-  resources :categories, controller: 'groups', as: 'groups' do
-  resources :transactions, controller: 'expenses', as: 'expenses'
-    end
+  root to: 'splash#splash'
+
+  devise_scope :user do
+    # root to: 'devise/sessions#new'
   end
+  
+  resources :groups, only: [:index, :new, :show, :create] do
+    resources :expenses, only: [:index, :create, :new] do
+      resources :group_expenses, only: [:create]
+  end
+end
 end

@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
+<div class= "container-fluid singup">
+<div class= "row">
+<p class="py-4 col-3 signinAs"> Signed in as:<%= current_user.name %> </p>
+<h5 class="py-3 col-5 text-center title">Categories</h5>
+<% if user_signed_in? %>
+    <div class='col-4 py-3'>
+    <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn btn-outline-light' %>
+    </div>
+<% end %>
 </div>
+</div>
+<br>
+<div class='fluid-container text-center'>
+    <% @groups.each do |group| %>
+        <%= link_to group_expenses_path(group.id), class: 'row categorieContainer' do %>
+            <div class="col-md-2"></div>
+            <img src="<%= group.icon %>"  class= 'col-4 col-md-3 py-1 img'>
+            <div class='col-4 col-md-3  py-3'><%= group.name %></div>
+            <div class='col-4  col-md-3  py-3'>$<%= group.group_expenses.sum {|x| x.expense.amount } %></div>
+            <div class="col-md-1"></div>
 
-<%= link_to "New group", new_group_path %>
+        <% end %>
+    <% end %>
+    <br>
+
+    <%= link_to 'Add a new Category', new_group_path, class: 'btn btn-primary' %>
+</div>
