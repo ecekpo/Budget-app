@@ -1,4 +1,4 @@
-MIT License
+Copyright 2023, [Emem Ekpo]
 
 Copyright (c) 2023 Emem Ekpo 
 
