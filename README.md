@@ -168,6 +168,8 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
+## Credit
+   I give credit to the original design idea by Gregoire Vella on Behance.
 
 ## ⭐️ Show your support <a name="support"></a>
 
