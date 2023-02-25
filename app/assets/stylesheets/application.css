@@ -106,6 +106,7 @@ input#transaction_amount::placeholder {
     width: 200px;
     height: 100px;
   }
+}
 
 .button-category {
   background-color: #fff;
