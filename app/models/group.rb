@@ -8,7 +8,7 @@ class Group < ApplicationRecord
 
   validates :icon, presence: true
 
-   def calculate_expense
+  def calculate_expense
     sum = 0
     expenses.each do |expense|
       sum += expense.amount
