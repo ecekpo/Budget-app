@@ -8,12 +8,15 @@
 body {
   background-color: #f8f9fa;
 }
+
 .navbar {
-  background-color: #3573BC;
+  background-color: #3573bc;
 }
+
 .form-group {
   margin-bottom: 0;
 }
+
 .form-group:not(:last-child) {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -106,12 +109,6 @@ input#transaction_amount::placeholder {
 }
 
 .button-category {
-  background-color: #60b524;
-  text-decoration: none;
-  color: #fff;
-}
-
-.button-category {
   background-color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -123,7 +120,7 @@ input#transaction_amount::placeholder {
 .button-category:hover {
   background-color: #fff;
   border: 2px solid #fff;
-  color: #60B524;
+  color: #60b524;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
