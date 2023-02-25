@@ -8,12 +8,15 @@
 body {
   background-color: #f8f9fa;
 }
+
 .navbar {
   background-color: #3573bc;
 }
+
 .form-group {
   margin-bottom: 0;
 }
+
 .form-group:not(:last-child) {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -103,13 +106,6 @@ input#transaction_amount::placeholder {
     width: 200px;
     height: 100px;
   }
-}
-
-.button-category {
-  background-color: #60b524;
-  text-decoration: none;
-  color: #fff;
-}
 
 .button-category {
   background-color: #fff;
