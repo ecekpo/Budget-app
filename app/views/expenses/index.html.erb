@@ -1,14 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<div class= "container-fluid singup">
+  <div class= "row">
+    <p class="col-3 signinAs"><%= link_to "<-", groups_path, class:'link-white link-whiteArrow'%></p>
+    <h5 class="py-3 col-5 text-center title">Transaction</h5>
+    <% if user_signed_in? %>
+      <div class='col-4 py-3'>
+        <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn btn-outline-light' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
 
-<h1>Expenses</h1>
-
-<div id="expenses">
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-    <p>
-      <%= link_to "Show this expense", expense %>
-    </p>
-  <% end %>
+<div class="categorieContainer p-4">
+    Total Amount: $<%= @group.calculate_expense %>
 </div>
 
-<%= link_to "New expense", new_expense_path %>
+<div class='fluid-container'>
+  <% @expenses.each do |expense| %>
+    <div class='row categorieContainer text-center'>
+      <div class='col-5 py-3'><%= expense.name %></div>
+      <div class='col-5 py-3'>$<%= expense.amount %></div>
+    </div>
+  <% end %>
+  <br>
+</div>
+<div class="bg-secondary fixed-bottom d-flex justify-content-center py-3">
+  <%= link_to new_group_expense_path, class: "w-75 d-flex align-items-center justify-content-center gap-2 py-2 px-5 bg-secondary border text-white block font-medium" do %>
+    <span>New transaction</span>
+  <% end %>
+</div>
