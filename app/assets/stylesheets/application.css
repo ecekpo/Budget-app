@@ -6,7 +6,23 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #f8f9fa;
+}
+.navbar {
+  background-color: #3573BC;
+}
+.form-group {
+  margin-bottom: 0;
+}
+.form-group:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .title {
@@ -93,4 +109,31 @@ input#transaction_amount::placeholder {
   background-color: #60B524;
   text-decoration: none;
   color: #fff;
+}
+
+.button-category {
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-category:hover {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #60B524;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.group-style {
+  padding: 0 40px;
 }

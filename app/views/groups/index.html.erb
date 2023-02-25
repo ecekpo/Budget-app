@@ -10,7 +10,7 @@
 </div>
 </div>
 <br>
-<div class='fluid-container text-center'>
+<div class='fluid-container text-center group-style'>
     <% @groups.each do |group| %>
         <%= link_to group_expenses_path(group.id), class: 'row categorieContainer' do %>
             <div class="col-md-2"></div>
@@ -25,7 +25,7 @@
 </div>
 <div class="d-flex fixed-bottom py-3 px-2" style="background-color: #60B524;">
   <div class="container d-flex justify-content-center category-container">
-    <%= link_to new_group_path, class: "button-category" do %>
+    <%= link_to new_group_path, class: "w-75 d-flex align-items-center justify-content-center gap-2 py-2 px-5  border text-white block font-medium" do %>
       <p style="color: #fff;">New Category</p>
     <% end %>
   </div>

@@ -15,7 +15,7 @@
     Total Amount: $<%= @group.calculate_expense %>
 </div>
 
-<div class='fluid-container'>
+<div class='fluid-container group-style'>
   <% @expenses.each do |expense| %>
     <div class='row categorieContainer text-center'>
       <div class='col-5 py-3'><%= expense.name %></div>
@@ -24,8 +24,8 @@
   <% end %>
   <br>
 </div>
-<div class="bg-secondary fixed-bottom d-flex justify-content-center py-3">
-  <%= link_to new_group_expense_path, class: "w-75 d-flex align-items-center justify-content-center gap-2 py-2 px-5 bg-secondary border text-white block font-medium" do %>
+<div class="fixed-bottom d-flex justify-content-center py-3" style="background-color: #60B524;">
+  <%= link_to new_group_expense_path, class: "w-75 d-flex align-items-center justify-content-center gap-2 py-2 px-5  border text-white block font-medium" do %>
     <span>New transaction</span>
   <% end %>
 </div>
