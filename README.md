@@ -88,7 +88,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
  
 
-- [Live Demo Link]()
+- [Live Demo Link](https://budget-app-bmmv.onrender.com/)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
@@ -168,8 +168,10 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Credit
-   I give credit to the original design idea by Gregoire Vella on Behance.
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+[Original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) by [Gregoire](https://www.behance.net/gregoirevella) Vella on Behance
+
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -180,5 +182,3 @@ If you like this project...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
