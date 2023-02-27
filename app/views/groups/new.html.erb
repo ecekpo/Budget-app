@@ -1,0 +1,44 @@
+<div class= "container-fluid singup">
+    <div class= "row">
+        <p class="col-3 signinAs"><%= link_to "<-", groups_path, class:'link-white link-whiteArrow'%></p>
+        <h5 class="py-3 col-5 text-center title">Categories</h5>
+        <% if user_signed_in? %>
+            <div class='col-4 py-3'>
+            <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn btn-outline-light' %>
+            </div>
+        <% end %>
+    </div>
+</div>
+<br>
+
+<%= form_with model: @group, url: groups_path, method: :post, scope: :group do |f| %>
+        <% if f.object.errors.any?%>
+            <div class='alert alert-danger'>
+                <%f.object.errors.full_messages.each do |msg|%>
+                <p><%=msg%></p>
+            </div>
+        <%end%>
+    <%end%>
+
+    <div class="container newCategorie py-2">
+        <h2 class="titleCategorie text-center">Create New Categorie</h2>
+        <br>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div>
+                    <%= f.text_field :name, placeholder: 'Categorie name', class: 'input-field form-control' %>
+                </div>
+                <br>
+                <div>
+                    <%= f.text_field :icon, placeholder: 'Image link', class: 'input-field form-control' %>
+                </div>
+                <br>
+                <div>
+                    <%= f.submit "Add Categorie", data: {turbo: false}, class: 'btn btn-primary' %>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+<% end %>

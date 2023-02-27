@@ -1,0 +1,32 @@
+<div class= "container-fluid singup">
+<div class= "row">
+<p class="py-4 col-3 signinAs"> Signed in as:<%= current_user.name %> </p>
+<h5 class="py-3 col-5 text-center title">Categories</h5>
+<% if user_signed_in? %>
+    <div class='col-4 py-3'>
+    <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn btn-outline-light' %>
+    </div>
+<% end %>
+</div>
+</div>
+<br>
+<div class='fluid-container text-center group-style'>
+    <% @groups.each do |group| %>
+        <%= link_to group_expenses_path(group.id), class: 'row categorieContainer' do %>
+            <div class="col-md-2"></div>
+            <img src="<%= group.icon %>"  class= 'col-4 col-md-3 py-1 img'>
+            <div class='col-4 col-md-3  py-3'><%= group.name %></div>
+            <div class='col-4  col-md-3  py-3'>$<%= group.group_expenses.sum {|x| x.expense.amount } %></div>
+            <div class="col-md-1"></div>
+
+        <% end %>
+    <% end %>
+    <br>
+</div>
+<div class="d-flex fixed-bottom py-3 px-2" style="background-color: #60B524;">
+  <div class="container d-flex justify-content-center category-container">
+    <%= link_to new_group_path, class: "w-75 d-flex align-items-center justify-content-center gap-2 py-2 px-5  border text-white block font-medium" do %>
+      <p style="color: #fff;">New Category</p>
+    <% end %>
+  </div>
+</div>
